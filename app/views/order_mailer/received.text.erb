@@ -1,0 +1,10 @@
+Dear <%= @order.name %>
+
+Thank you for your rencent order from The Pragmatic Store.
+
+You ordered the following items:
+
+<%= render @order.line_items %>
+
+We'll send you a separate email when you order ships.
+

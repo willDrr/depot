@@ -1,0 +1,115 @@
+Run options: --seed 63810
+
+# Running:
+
+.......F
+
+Failure:
+OrdersControllerTest#test_should_create_oder [/home/gnu/rails-projects/depot/test/controllers/orders_controller_test.rb:68]:
+Expected response to be a redirect to <http://www.example.com/> but was a redirect to <http://www.example.com/en>.
+Expected "http://www.example.com/" to be === "http://www.example.com/en".
+
+rails test test/controllers/orders_controller_test.rb:56
+
+..E
+
+Error:
+ProductsControllerTest#test_should_update_product:
+ActionView::Template::Error: Nil location provided. Can't build URI.
+    app/views/store/index.html.erb:12
+    app/views/store/index.html.erb:10
+    app/views/store/index.html.erb:9
+    app/views/store/index.html.erb:8
+    app/controllers/products_controller.rb:48:in `block in update'
+    app/controllers/products_controller.rb:40:in `update'
+    test/controllers/products_controller_test.rb:38:in `block in <class:ProductsControllerTest>'
+
+rails test test/controllers/products_controller_test.rb:37
+
+.....E
+
+Error:
+ProductsControllerTest#test_should_get_index:
+ActionView::Template::Error: Nil location provided. Can't build URI.
+    app/views/products/index.html.erb:20
+    app/views/products/index.html.erb:16
+    test/controllers/products_controller_test.rb:10:in `block in <class:ProductsControllerTest>'
+
+rails test test/controllers/products_controller_test.rb:9
+
+..............F
+
+Failure:
+SessionsControllerTest#test_should_get_create [/home/gnu/rails-projects/depot/test/controllers/sessions_controller_test.rb:35]:
+Expected response to be a <2XX: success>, but was a <302: Found> redirect to <http://www.example.com/login>
+Response body: <html><body>You are being <a href="http://www.example.com/login">redirected</a>.</body></html>
+
+rails test test/controllers/sessions_controller_test.rb:33
+
+F
+
+Failure:
+SessionsControllerTest#test_should_get_destroy [/home/gnu/rails-projects/depot/test/controllers/sessions_controller_test.rb:40]:
+Expected response to be a <2XX: success>, but was a <302: Found> redirect to <http://www.example.com/>
+Response body: <html><body>You are being <a href="http://www.example.com/">redirected</a>.</body></html>
+
+rails test test/controllers/sessions_controller_test.rb:38
+
+....F
+
+Failure:
+OrderMailerTest#test_shipped [/home/gnu/rails-projects/depot/test/mailers/order_mailer_test.rb:17]:
+Expected /<td[^>]*>1<\/td>\s*<td>Programming Ruby 1.9<\/td>/ to match # encoding: US-ASCII
+#    valid: true
+"\r\n----==_mimepart_61136a0579d6e_60fb2b0c2838f9a03109e\r\nContent-Type: text/plain;\r\n charset=UTF-8\r\nContent-Transfer-Encoding: 7bit\r\n\r\nOrder#shipped\r\n\r\n, find me in app/views/order_mailer/shipped.text.erb\r\n\r\n\r\n----==_mimepart_61136a0579d6e_60fb2b0c2838f9a03109e\r\nContent-Type: text/html;\r\n charset=UTF-8\r\nContent-Transfer-Encoding: 7bit\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n    <style>\r\n      /* Email styles need to be inline */\r\n    </style>\r\n  </head>\r\n\r\n  <body>\r\n    <h3>Pragmatic Order Shipped</h3>\r\n\r\n<p>\r\n  This is just to let you know that we've shipped your recent order:\r\n</p>\r\n\r\n<table>\r\n  <tr>\r\n    <th colspan=\"2\">Qty</th>\r\n    <th>Description</th>\r\n  </tr>\r\n</table>\r\n\r\n  </body>\r\n</html>\r\n\r\n----==_mimepart_61136a0579d6e_60fb2b0c2838f9a03109e--\r\n".
+
+rails test test/mailers/order_mailer_test.rb:12
+
+F
+
+Failure:
+OrderMailerTest#test_received [/home/gnu/rails-projects/depot/test/mailers/order_mailer_test.rb:9]:
+Expected /\/1\ x\ Programming\ Ruby\ 1\.9\// to match # encoding: US-ASCII
+#    valid: true
+"\r\n----==_mimepart_61136a0580783_60fb2b0c2838f9a031154\r\nContent-Type: text/plain;\r\n charset=UTF-8\r\nContent-Transfer-Encoding: 7bit\r\n\r\nDear Dave Thomas\r\n\r\nThank you for your rencent order from The Pragmatic Store.\r\n\r\nYou ordered the following items:\r\n\r\n\r\n\r\nWe'll send you a separate email when you order ships.\r\n\r\n\r\n\r\n----==_mimepart_61136a0580783_60fb2b0c2838f9a031154\r\nContent-Type: text/html;\r\n charset=UTF-8\r\nContent-Transfer-Encoding: 7bit\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n    <style>\r\n      /* Email styles need to be inline */\r\n    </style>\r\n  </head>\r\n\r\n  <body>\r\n    <h1>Order#received</h1>\r\n\r\n<p>\r\n  , find me in app/views/order_mailer/received.html.erb\r\n</p>\r\n\r\n  </body>\r\n</html>\r\n\r\n----==_mimepart_61136a0580783_60fb2b0c2838f9a031154--\r\n".
+
+rails test test/mailers/order_mailer_test.rb:4
+
+...F
+
+Failure:
+LineItemsControllerTest#test_should_create_line_item_via_ajax [/home/gnu/rails-projects/depot/test/controllers/line_items_controller_test.rb:65]:
+Expected /<tr class=\\"line-item-highlight/ to match "cart = document.getElementById(\"cart\");\ncart.innerHTML = \"<article>\\n\\n  <h2>Your Cart<\\/h2>\\n  <table>\\n\\n    <tr>\\n  <td class=\\\"quantity\\\">1<\\/td>\\n  <td>Programming Ruby 1.9<\\/td>\\n  <td class=\\\"price\\\">\\$49.50<\\/td>\\n<\\/tr>\\n\\n    <tfoot>\\n      <tr>\\n        <th colspan=\\\"2\\\">Total:<\\/th>\\n        <td class=\\\"price\\\">\\$49.50<\\/td>\\n      <\\/tr>\\n    <\\/tfoot>\\n  <\\/table>\\n\\n  <div class=\\\"actions\\\">\\n   \\n    <form class=\\\"button_to\\\" method=\\\"post\\\" action=\\\"/carts/980190963\\\"><input type=\\\"hidden\\\" name=\\\"_method\\\" value=\\\"delete\\\" /><input data-confirm=\\\"Are you sure?\\\" type=\\\"submit\\\" value=\\\"Empty cart\\\" /><\\/form>\\n\\n    <form class=\\\"button_to\\\" method=\\\"get\\\" action=\\\"/orders/new\\\"><input class=\\\"checkout\\\" type=\\\"submit\\\" value=\\\"Checkout\\\" /><\\/form>\\n  <\\/div>\\n<\\/article> \\n\"; // j() alias for escape_javascript()\n\nnotice = document.getElementById(\"notice\");\nif (notice) {\n  notice.style.display = \"none\";\n}\n".
+
+rails test test/controllers/line_items_controller_test.rb:58
+
+..E
+
+Error:
+LineItemsControllerTest#test_should_create_line_item:
+ActionView::Template::Error: Nil location provided. Can't build URI.
+    app/views/store/index.html.erb:12
+    app/views/store/index.html.erb:10
+    app/views/store/index.html.erb:9
+    app/views/store/index.html.erb:8
+    test/controllers/line_items_controller_test.rb:23:in `block in <class:LineItemsControllerTest>'
+
+rails test test/controllers/line_items_controller_test.rb:18
+
+.E
+
+Error:
+StoreControllerTest#test_should_get_index:
+ActionView::Template::Error: Nil location provided. Can't build URI.
+    app/views/store/index.html.erb:12
+    app/views/store/index.html.erb:10
+    app/views/store/index.html.erb:9
+    app/views/store/index.html.erb:8
+    test/controllers/store_controller_test.rb:5:in `block in <class:StoreControllerTest>'
+
+rails test test/controllers/store_controller_test.rb:4
+
+........
+
+Finished in 23.735279s, 2.3594 runs/s, 4.1710 assertions/s.
+56 runs, 99 assertions, 6 failures, 4 errors, 0 skips

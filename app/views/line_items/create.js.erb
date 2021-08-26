@@ -1,0 +1,7 @@
+cart = document.getElementById("cart");
+cart.innerHTML = "<%= j render(@cart) %>"; // j() alias for escape_javascript()
+
+notice = document.getElementById("notice");
+if (notice) {
+  notice.style.display = "none";
+}
