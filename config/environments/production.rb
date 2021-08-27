@@ -91,6 +91,9 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  # added from heroku dev center page 26/08/2021 9:20pm
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
