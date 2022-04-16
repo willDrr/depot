@@ -75,4 +75,10 @@ Rails.application.configure do
   config.action_cable.disable_request_forgery_protection = true
 
   config.active_storage.service = :local
+
+  # allowing better errors debug console
+  config.consider_all_requests_local = true
+
+  # allowing better errrors middleware
+  BetterErrors::Middleware.allow_ip! '0.0.0.0/0'
 end

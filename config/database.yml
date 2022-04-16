@@ -7,11 +7,11 @@
 default: &default
   adapter: postgresql 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: Depot_user 
-  password: <%= ENV["depot_DATABASE_PASSWORD"] %> 
+  username: <%= ENV["user"] %> 
+  password: <%= ENV["password"] %> 
+  port: <%= ENV["port"] %>
+  host: <%= ENV["host"] %>
   timeout: 5000
-  port: 6667
-  host: localhost
 
 development:
   <<: *default
